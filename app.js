@@ -1,10 +1,10 @@
-var express = require('express'),
-    logger = require('morgan'),
-    bodyParser = require('body-parser'),
-    top = require('./routes/top'),
-    methodOverride = require('method-override'),
-    os = require('os'),
-    app = express();
+const express = require('express'),
+      logger = require('morgan'),
+      bodyParser = require('body-parser'),
+      top = require('./routes/top'),
+      methodOverride = require('method-override'),
+      os = require('os'),
+      app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view_engine', 'ejs');
@@ -27,11 +27,12 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', top.index);
 
-var port = 3000;
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 // start server on the specified port and binding host
-var server = app.listen(port, function() {
+const server = app.listen(PORT, HOST, function() {
   // print a message when the server starts listening
-  console.log("server starting...");
+  console.log(`server starting on http://${HOST}:${PORT}`);
 });
 exports.server = server;

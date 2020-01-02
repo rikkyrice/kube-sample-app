@@ -9,4 +9,4 @@ spec:
   ports:
   - name: webserver
     protocol: TCP
-    port: 3000
+    port: 8080

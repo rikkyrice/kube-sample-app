@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kube-sample-app
-        image: ${ユーザ名}/kube-sample-app:0.1
+        image: rikkyrice/kube-sample-app:0.2
         command:
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
